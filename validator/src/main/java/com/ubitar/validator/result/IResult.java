@@ -9,7 +9,7 @@ public interface IResult<Raw> {
 
     Raw getRaw();
 
-    boolean isValid();
+    boolean hasError();
 
     IReason getReasonAtFirst();
 

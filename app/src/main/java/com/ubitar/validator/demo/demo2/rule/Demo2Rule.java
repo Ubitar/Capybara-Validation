@@ -20,18 +20,28 @@ public class Demo2Rule extends BaseRule<RawBean2.RawBeanInner> {
         this.message = message;
     }
 
-    /** 自定义内容校验过程  */
+    /**
+     * your custom valid
+     *
+     * @return true :pass valid    false:pass invalid
+     */
     @Override
     public boolean onMatchField(RawBean2.RawBeanInner rawBeanInner) {
-        if(rawBeanInner==null) return false;
+        if (rawBeanInner == null) return false;
         return rawBeanInner.getStr().equals("123");
     }
 
+    /**
+     * your can get the error message after the verification fails
+     */
     @Override
     public String getMessage() {
         return message;
     }
 
+    /**
+     * your can get the tag after the verification fails
+     */
     @Override
     public String getTag() {
         return tag;

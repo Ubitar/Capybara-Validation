@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent"
-    android:text="Demo2\n自定义规则"
+    android:text="Demo2\n\nCustom Validation"
     android:gravity="center"
     android:textSize="20sp"
     android:layout_height="match_parent">

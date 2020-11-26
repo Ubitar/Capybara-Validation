@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ubitar.validator.CValidator;
 import com.ubitar.validator.demo.R;
-import com.ubitar.validator.demo.demo1.validation.RawValidation1;
 import com.ubitar.validator.demo.demo2.bean.RawBean2;
 import com.ubitar.validator.demo.demo2.validation.RawValidation2;
 import com.ubitar.validator.reason.IReason;
@@ -22,14 +21,11 @@ public class Demo2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo2);
 
-        RawBean2 bean=new RawBean2();
-        RawBean2.RawBeanInner inner=new RawBean2.RawBeanInner();
-        inner.setStr("112");
-        bean.setInnerClass(inner);
+        RawBean2 bean = createRawBean();
 
         IResult result = CValidator.valid(new RawValidation2(bean));
-        boolean isValid = result.isValid();
-        if (isValid) {
+        boolean hasError = result.hasError();
+        if (hasError) {
             Log.d("Demo2Activity", "valid pass");
         } else {
             IReason reason = result.getReasonAtFirst();
@@ -42,5 +38,13 @@ public class Demo2Activity extends AppCompatActivity {
 
             Log.d("Demo2Activity", message + "---" + tag + "---" + field);
         }
+    }
+
+    private RawBean2 createRawBean() {
+        RawBean2 bean = new RawBean2();
+        RawBean2.RawBeanInner inner = new RawBean2.RawBeanInner();
+        inner.setStr("112");
+        bean.setInnerClass(inner);
+        return bean;
     }
 }

@@ -24,6 +24,7 @@ public class Demo1Activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo1);
+
         RawBean1 bean = new RawBean1();
 
         bean.setStr("xxx");
@@ -33,8 +34,9 @@ public class Demo1Activity extends AppCompatActivity {
         bean.setMap(getMap());
 
         IResult result = CValidator.valid(new RawValidation1(bean));
-        boolean isValid = result.isValid();
-        if (isValid) {
+//        IResult result = CValidator.valid(new RawValidation1(bean),false);
+        boolean hasError = result.hasError();
+        if (hasError) {
             Log.d("Demo1Activity", "valid pass");
         } else {
             IReason reason = result.getReasonAtFirst();

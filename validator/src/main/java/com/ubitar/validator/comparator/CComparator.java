@@ -1,8 +1,5 @@
 package com.ubitar.validator.comparator;
 
-import android.content.Context;
-
-import com.ubitar.validator.CValidator;
 import com.ubitar.validator.reason.CReason;
 import com.ubitar.validator.reason.IReason;
 import com.ubitar.validator.result.CResult;
@@ -15,11 +12,17 @@ import java.util.List;
 public class CComparator<Raw> implements IComparator {
 
     private Raw raw;
+    private boolean isQuickCompareMode = true;
 
     private List<IRule> items = new ArrayList<IRule>();
 
     public CComparator(Raw raw) {
+        this(raw, true);
+    }
+
+    public CComparator(Raw raw, boolean isQuickCompareMode) {
         this.raw = raw;
+        this.isQuickCompareMode = isQuickCompareMode;
     }
 
     @Override
@@ -36,6 +39,7 @@ public class CComparator<Raw> implements IComparator {
                 String message = item.getMessage();
                 IReason reason = new CReason(message, item);
                 results.addReason(reason);
+                if (isQuickCompareMode) break;
             }
         }
         return results;

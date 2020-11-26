@@ -22,7 +22,7 @@ public class CResult<Raw> implements IResult<Raw> {
     }
 
     @Override
-    public boolean isValid() {
+    public boolean hasError() {
         return reasons.size() <= 0;
     }
 
