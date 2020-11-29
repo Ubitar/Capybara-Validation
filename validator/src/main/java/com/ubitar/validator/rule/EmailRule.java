@@ -29,11 +29,13 @@ public class EmailRule extends BaseRule<String> {
         return Pattern.matches(REGEX_EMAIL, field);
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

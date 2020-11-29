@@ -1,5 +1,7 @@
 package com.ubitar.validator.rule;
 
+import androidx.annotation.Nullable;
+
 import com.ubitar.validator.rule.base.BaseRule;
 import com.ubitar.validator.rule.base.IDoubleRule;
 import com.ubitar.validator.rule.base.IFloatRule;
@@ -113,11 +115,13 @@ public class MinRule extends BaseRule<Object> implements IIntRule, IShortRule, I
         return false;
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

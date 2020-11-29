@@ -68,11 +68,13 @@ public class NotEmptyRule extends BaseRule<Object> implements ICollectionRule, I
         return false;
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

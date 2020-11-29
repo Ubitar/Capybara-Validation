@@ -19,11 +19,13 @@ public class NotNullRule extends BaseRule<Object> {
         this.message = message;
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

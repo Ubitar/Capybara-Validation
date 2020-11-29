@@ -1,12 +1,15 @@
 package com.ubitar.validator.validation;
 
+import androidx.annotation.NonNull;
+
 import com.ubitar.validator.comparator.IComparator;
 import com.ubitar.validator.result.IResult;
 
 public interface IValidation<Raw> {
 
-     Raw getRaw();
+    @NonNull
+    Raw getRaw();
 
-      IResult<Raw> onValid(IComparator<Raw> comparator);
+    IResult<Raw> onValid(@NonNull IComparator<Raw> comparator);
 
 }

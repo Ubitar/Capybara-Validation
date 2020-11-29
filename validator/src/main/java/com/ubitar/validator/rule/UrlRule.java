@@ -31,11 +31,13 @@ public class UrlRule extends BaseRule<String>{
         return Patterns.WEB_URL.matcher(field).matches();
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

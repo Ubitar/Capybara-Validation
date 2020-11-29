@@ -73,11 +73,13 @@ public class LengthRule extends BaseRule<Object> implements ICollectionRule, IMa
         return false;
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

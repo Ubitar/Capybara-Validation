@@ -1,5 +1,7 @@
 package com.ubitar.validator.rule.base;
 
+import androidx.annotation.NonNull;
+
 import java.util.Collection;
 import java.util.Map;
 
@@ -11,6 +13,7 @@ public abstract class BaseRule<Field> implements IFieldRule<Field> {
         this.field = field;
     }
 
+    @NonNull
     @Override
     public Field getField() {
         return field;

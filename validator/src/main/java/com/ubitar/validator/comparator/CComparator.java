@@ -1,5 +1,7 @@
 package com.ubitar.validator.comparator;
 
+import androidx.annotation.NonNull;
+
 import com.ubitar.validator.reason.CReason;
 import com.ubitar.validator.reason.IReason;
 import com.ubitar.validator.result.CResult;
@@ -16,21 +18,23 @@ public class CComparator<Raw> implements IComparator {
 
     private List<IRule> items = new ArrayList<IRule>();
 
-    public CComparator(Raw raw) {
+    public CComparator(@NonNull Raw raw) {
         this(raw, true);
     }
 
-    public CComparator(Raw raw, boolean isQuickCompareMode) {
+    public CComparator(@NonNull Raw raw, boolean isQuickCompareMode) {
         this.raw = raw;
         this.isQuickCompareMode = isQuickCompareMode;
     }
 
+    @NonNull
     @Override
-    public CComparator<Raw> addItem(IRule rule) {
+    public CComparator<Raw> addItem(@NonNull IRule rule) {
         items.add(rule);
         return this;
     }
 
+    @NonNull
     @Override
     public IResult<Raw> validate() {
         CResult<Raw> results = new CResult<Raw>(raw);

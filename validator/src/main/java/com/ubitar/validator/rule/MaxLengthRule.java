@@ -84,11 +84,13 @@ public class MaxLengthRule extends BaseRule<Object> implements ICollectionRule, 
         return false;
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;

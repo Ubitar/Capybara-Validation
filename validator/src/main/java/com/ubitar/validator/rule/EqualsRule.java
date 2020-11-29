@@ -30,11 +30,13 @@ public class EqualsRule extends BaseRule<Object> {
         return field.equals(anotherValue);
     }
 
+    @Nullable
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Nullable
     @Override
     public String getTag() {
         return tag;
