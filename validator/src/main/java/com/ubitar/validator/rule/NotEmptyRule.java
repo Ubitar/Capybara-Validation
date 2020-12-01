@@ -64,7 +64,8 @@ public class NotEmptyRule extends BaseRule<Object> implements ICollectionRule, I
 
     @Override
     public boolean onMatchField(Object o) {
-        message = "NoteEmptyRule only support Collection/Map/String Type";
+        if (field == null) return false;
+        message = "NotEmptyRule only support Collection/Map/String Type";
         return false;
     }
 

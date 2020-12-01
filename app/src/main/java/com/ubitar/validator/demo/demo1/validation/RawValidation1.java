@@ -13,7 +13,7 @@ import com.ubitar.validator.rule.MaxRule;
 import com.ubitar.validator.rule.MinLengthRule;
 import com.ubitar.validator.rule.NotEmptyRule;
 import com.ubitar.validator.rule.NotNullRule;
-import com.ubitar.validator.rule.NotSpaceyRule;
+import com.ubitar.validator.rule.NotSpaceRule;
 import com.ubitar.validator.rule.UrlRule;
 import com.ubitar.validator.validation.BaseValidation;
 
@@ -32,7 +32,7 @@ public class RawValidation1 extends BaseValidation<RawBean1> {
                 //String
                 .addItem(new NotNullRule(rawBean1.getStr(), "str can't not be null","tag1"))
                 .addItem(new NotEmptyRule(rawBean1.getStr(), "str can't not be empty","tag2"))
-                .addItem(new NotSpaceyRule(rawBean1.getStr(), "str can't not be space"))
+                .addItem(new NotSpaceRule(rawBean1.getStr(), "str can't not be space"))
                 .addItem(new UrlRule(rawBean1.getStr(), "str isn't url"))
                 .addItem(new EmailRule(rawBean1.getStr(), "str isn't email"))
                 .addItem(new EqualsRule(rawBean1.getStr(), "xxx", "str isn't equals xxx"))

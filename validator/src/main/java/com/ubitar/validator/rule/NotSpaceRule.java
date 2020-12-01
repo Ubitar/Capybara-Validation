@@ -3,24 +3,19 @@ package com.ubitar.validator.rule;
 import androidx.annotation.Nullable;
 
 import com.ubitar.validator.rule.base.BaseRule;
-import com.ubitar.validator.rule.base.ICollectionRule;
-import com.ubitar.validator.rule.base.IMapRule;
 import com.ubitar.validator.rule.base.IStringRule;
 
-import java.util.Collection;
-import java.util.Map;
-
-public class NotSpaceyRule extends BaseRule<Object> implements IStringRule {
+public class NotSpaceRule extends BaseRule<Object> implements IStringRule {
 
     private String message;
     private String tag;
 
-    public NotSpaceyRule(@Nullable String field, String message, String tag) {
+    public NotSpaceRule(@Nullable String field, String message, String tag) {
         this(field, message);
         this.tag = tag;
     }
 
-    public NotSpaceyRule(@Nullable String field, String message) {
+    public NotSpaceRule(@Nullable String field, String message) {
         super(field);
         this.message = message;
     }
@@ -38,8 +33,11 @@ public class NotSpaceyRule extends BaseRule<Object> implements IStringRule {
 
     @Override
     public boolean onMatchField(Object o) {
-        message = "NoteEmptyRule only support String Type";
-        return false;
+        if (field == null) return false;
+        else{
+            message = "NotSpaceRule only support String Type";
+            return false;
+        }
     }
 
     @Nullable
