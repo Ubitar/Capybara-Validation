@@ -26,7 +26,7 @@ public class CResult<Raw> implements IResult<Raw> {
 
     @Override
     public boolean hasError() {
-        return reasons.size() <= 0;
+        return reasons.size() > 0;
     }
 
     @NonNull

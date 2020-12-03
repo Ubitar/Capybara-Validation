@@ -55,7 +55,7 @@ publish {
     userOrg = "ubitar"
     groupId = "com.ubitar.capybara"
     artifactId = "validator"
-    publishVersion = "1.0.3"
+    publishVersion = "1.0.4"
     desc = "a android Validator library"
     website = "https://github.com/Ubitar/Capybara-Validatoraa"
 }

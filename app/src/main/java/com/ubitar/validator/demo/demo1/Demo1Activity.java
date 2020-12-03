@@ -36,7 +36,7 @@ public class Demo1Activity extends AppCompatActivity {
         IResult result = CValidator.valid(new RawValidation1(bean));
 //        IResult result = CValidator.valid(new RawValidation1(bean),false);
         boolean hasError = result.hasError();
-        if (hasError) {
+        if (!hasError) {
             Log.d("Demo1Activity", "valid pass");
         } else {
             IReason reason = result.getReasonAtFirst();

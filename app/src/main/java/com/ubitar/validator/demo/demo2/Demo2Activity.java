@@ -25,7 +25,7 @@ public class Demo2Activity extends AppCompatActivity {
 
         IResult result = CValidator.valid(new RawValidation2(bean));
         boolean hasError = result.hasError();
-        if (hasError) {
+        if (!hasError) {
             Log.d("Demo2Activity", "valid pass");
         } else {
             IReason reason = result.getReasonAtFirst();
