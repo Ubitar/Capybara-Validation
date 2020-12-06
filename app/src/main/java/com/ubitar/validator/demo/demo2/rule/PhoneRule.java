@@ -30,7 +30,7 @@ public class PhoneRule extends BaseRule<String> {
     /**
      * your custom valid
      *
-     * @return true :pass valid    false:pass invalid
+     * @return true :pass valid    false:unpass
      */
     @Override
     public boolean onMatchField(String field) {
