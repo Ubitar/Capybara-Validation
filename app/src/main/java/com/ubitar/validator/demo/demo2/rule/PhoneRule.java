@@ -5,17 +5,24 @@ import androidx.annotation.Nullable;
 import com.ubitar.validator.demo.demo2.bean.RawBean2;
 import com.ubitar.validator.rule.base.BaseRule;
 
-public class Demo2Rule extends BaseRule<RawBean2.RawBeanInner> {
+import java.util.regex.Pattern;
+
+public class PhoneRule extends BaseRule<String> {
+
+    /**
+     * Regex of simple mobile.
+     */
+    public static final String REGEX_MOBILE_SIMPLE = "^[1]\\d{10}$";
 
     private String message;
     private String tag;
 
-    public Demo2Rule(@Nullable RawBean2.RawBeanInner field, String message, String tag) {
+    public PhoneRule(@Nullable String field, String message, String tag) {
         this(field, message);
         this.tag = tag;
     }
 
-    public Demo2Rule(@Nullable RawBean2.RawBeanInner field, String message) {
+    public PhoneRule(@Nullable String field, String message) {
         super(field);
         this.message = message;
     }
@@ -26,9 +33,9 @@ public class Demo2Rule extends BaseRule<RawBean2.RawBeanInner> {
      * @return true :pass valid    false:pass invalid
      */
     @Override
-    public boolean onMatchField(RawBean2.RawBeanInner rawBeanInner) {
-        if (rawBeanInner == null) return false;
-        return rawBeanInner.getStr().equals("123");
+    public boolean onMatchField(String field) {
+        if (field == null||field.length()<=0) return false;
+        return Pattern.matches(REGEX_MOBILE_SIMPLE, field);
     }
 
     /**

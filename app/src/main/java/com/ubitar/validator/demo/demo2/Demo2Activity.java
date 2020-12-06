@@ -42,9 +42,7 @@ public class Demo2Activity extends AppCompatActivity {
 
     private RawBean2 createRawBean() {
         RawBean2 bean = new RawBean2();
-        RawBean2.RawBeanInner inner = new RawBean2.RawBeanInner();
-        inner.setStr("112");
-        bean.setInnerClass(inner);
+        bean.setPhone("131313131223");
         return bean;
     }
 }
