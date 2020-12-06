@@ -1,4 +1,4 @@
-##Capybara-Validator 
+## Capybara-Validator 
 An android bean validator library
 Make your code structure more standardized
 
@@ -6,9 +6,9 @@ Make your code structure more standardized
 - support quick check mode
 - support custom rule
 - support android string resource
-#### Import
+### Import
 ```implementation 'com.ubitar.capybara:validator:1.0.1'```
-#### Use
+### Use
 **1、Create your bean**
 ```
 public class RawBean1 {
@@ -52,9 +52,9 @@ CValidator.valid(Raw bean,Boolean quickMode)
 //get all reason
 List<IReason> reasons = result.getAllReason();
 ```
-**4、There are more standard rule in the library**
+**4、There are more standard rule in the library**<br/>
 EmailRule、EqualsRule、LengthRule、MaxLengthRule、MinLengthRule、MaxRule、MinRule、NotEmptyRule、NotNullRule、NotSpaceRule、UrlRule
-#### Advanced  
+### Advanced  
 **5、Maybe you want to customize the rules in your project. Such as phone rule**
 ```
 public class PhoneRule extends BaseRule<String> {
