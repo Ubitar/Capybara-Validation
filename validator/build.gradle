@@ -48,14 +48,13 @@ dependencies {
     testImplementation dependencies.junit
     androidTestImplementation dependencies.test_runner
     androidTestImplementation dependencies.test_espresso_core
-
 }
 
 publish {
     userOrg = "ubitar"
     groupId = "com.ubitar.capybara"
     artifactId = "validator"
-    publishVersion = "1.0.4"
+    publishVersion = "1.0.5"
     desc = "a android Validator library"
     website = "https://github.com/Ubitar/Capybara-Validatoraa"
 }
